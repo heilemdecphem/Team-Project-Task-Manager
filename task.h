@@ -17,7 +17,6 @@ typedef struct Task {
 // Core Function Prototypes
 // =====================
 
-// Create a new task node
 Task* createTask(int id, char* title, bool isImportant); // Create a new task node
 void deleteTask(Task** head, int id); // Delete a task by ID
 void displayTasks(Task* head); // Display all tasks
