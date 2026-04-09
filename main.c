@@ -36,6 +36,7 @@ int main() {
             printf("Important? (1 = yes, 0 = no): ");
             scanf("%d", &important);
 
+            // Satifies Requirement 4: Data Structure Implementation
             Task* newTask = createTask(id, title, important);
             newTask->next = head;
             head = newTask;
