@@ -4,6 +4,7 @@
 #include <stdbool.h>
 
 // Struct Definition
+// Satifies Requirement 2: Advanced Pointers & Structs
 typedef struct Task {
     int id;
     char title[100];
