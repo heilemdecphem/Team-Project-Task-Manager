@@ -6,7 +6,8 @@
 static int currentOrder = 0;
 
 Task* createTask(int id, char* title, bool isImportant) {
-    // allocate memory for task
+    // allocate memory for 
+    // Satisfies Requirement 3: Dynamic Memory Management
     Task* newTask = malloc(sizeof(Task));
     if (newTask == NULL) {
         perror("Cannot create new tasks!\n");
