@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "file.h"
 
+// Satisfies Requirement 5: File I/O Operations
 bool saveTasksToFile(const char* filename, Task* head) {
     FILE* fp = fopen(filename, "w");
     if (fp == NULL) {
