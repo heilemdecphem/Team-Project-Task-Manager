@@ -34,7 +34,7 @@ bool loadTasksFromFile(const char* filename, Task** head) {
     int id, isImportant, order;
     char title[100];
 
-    while (fscanf(fp, "%d;%99[^;];%d;%d\n",
+    while (fscanf(fp, "%d:%99[^;];%d;%d\n",
                   &id, title, &isImportant, &order) == 4) {
 
         Task* newTask = createTask(id, title, isImportant);
