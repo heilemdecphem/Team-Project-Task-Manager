@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "task.h"
 
 static int currentOrder = 0;
@@ -29,7 +30,7 @@ void deleteTask(Task** head, int id) {
     Task* temp = *head, *prev = NULL;
     
     // if temp at the top
-    while(temp != NULL && temp->id == id) {
+    if (temp != NULL && temp->id == id) {
         *head = temp->next;
         free(temp);
         return;
@@ -62,15 +63,14 @@ void displayTasks(Task* head) {
     // going through the list and print each temp
     while (temp != NULL) {
         printf("Task %d: %s", item, temp->title);
-        item++;
-        
-        // notify user if this item is important
+        item++; 
+
         if (temp->isImportant) {
-            printf("(IMPORTANT!)\n");
+            printf( "(IMPORTANT)");
         }
         printf("\n");
-
         temp = temp->next;
+        // notify user if this item is important
     }
 }
 
@@ -85,7 +85,7 @@ Task* searchTask(Task* head, int id) {
     // if task not found
     if (temp == NULL) {
         printf("Task not found.\n");
-        exit;
+        return NULL;
     }
     
     // if found
@@ -137,7 +137,7 @@ void sortTasks(Task* head) {
 
     for (i = head; i != NULL; i = i->next) {
         for (j = i->next; j != NULL; j = j->next) {
-            if (shouldswap(i, j)) {
+            if (shouldSwap(i, j)) {
                 swapTaskData(i, j);
             }
         }
