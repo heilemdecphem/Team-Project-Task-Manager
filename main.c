@@ -23,6 +23,7 @@ int main() {
     do {
         showMenu();
         scanf("%d", &choice);
+        getchar();
 
         if (choice == 1) {
             int id;
@@ -31,6 +32,8 @@ int main() {
 
             printf("ID: ");
             scanf("%d", &id);
+            getchar();
+            
             printf("Title: ");
             scanf(" %[^\n]", title);
             printf("Important? (1 = yes, 0 = no): ");
